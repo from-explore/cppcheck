@@ -24,3 +24,12 @@ add_subdirectory(test)  # Tests
 ADD_SUBDIRECTORY(gui)   # Graphical application
 
 include(cmake/printInfo.cmake REQUIRED)
+
+# Package Generator  #######################################################
+set(CPACK_PACKAGE_DESCRIPTION "debian")
+set(CPACK_GENERATOR DEB)
+set(CPACK_SOURCE_GENERATOR DEB)
+set(CPACK_SOURCE_IGNORE_FILES "/include/")
+set(CPACK_PACKAGE_FILE_NAME "${CMAKE_PROJECT_NAME}")
+set(CPACK_PACKAGE_CONTACT tam.do@pexraytech.com)
+include(CPack)
